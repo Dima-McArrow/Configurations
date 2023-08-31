@@ -4,12 +4,12 @@
 add_newline = true
 
 # Change the default prompt format
-# format = """\
-# [╭╴](238)$os \
-# $all[╰─](238)$character"""
+format = """\
+[╭╴](238)$os$shell \
+$all[╰─](238)$character"""
 
-#new_config
-format = """ $os$all """
+# new_config
+# format = """ $os$all$character """
 
 # Change the default prompt characters
 [character]
@@ -17,10 +17,10 @@ success_symbol = "[ ❯](green)(238)"
 error_symbol = "[ ❯](red)(238)"
 
 # Shows an icon that should be included by zshrc script based on the distribution or os
-[env_var.STARSHIP_DISTRO]
-format = '[$env_value](bold white)'  # removed space between distro and rest for pwsh
-variable = "STARSHIP_DISTRO"
-disabled = true
+#[env_var.STARSHIP_DISTRO]
+#format = '[$env_value](bold white)'  # removed space between distro and rest for pwsh
+#variable = "STARSHIP_DISTRO"
+#disabled = true
 
 [os]
 format = "on [$symbol$version]($style) "
@@ -68,6 +68,16 @@ Ubuntu = " "
 Unknown = " "
 Windows = " "
 
+# Shell
+[shell]
+fish_indicator = '󰈺 '
+powershell_indicator = '_'
+zsh_indicator = '󱉸_'
+bash_indicator = '󱆃'
+unknown_indicator = 'mystery shell'
+style = 'red bold'
+disabled = false
+
 # Shows the username
 [username]
 style_user = "white bold"
@@ -90,10 +100,10 @@ read_only = "  "
 format = "at [$path]($style)[$read_only]($read_only_style) "
 
 [directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+"Documents" = " 󰈙 "
+"Downloads" = "   "
+"Music" = "   "
+"Pictures" = "   "
 
 [git_branch]
 symbol = " [󰊢](red) "
@@ -136,12 +146,11 @@ format = "via [ $context](bold blue) "
 format = "via [ $version](bold purple) "
 
 [python]
-symbol = "  "
+symbol = " [](blue) "
 python_binary = "python3"
 
 [nodejs]
-format = "via [󰎙 $version](bold green) "
-disabled = true
+format = "via [󰎙 $version](bold green) "
 
 [ruby]
 format = "via [ $version]($style) "
@@ -156,3 +165,10 @@ disabled = false
 [php]
 symbol = "  "
 format = '[ $symbol$version]'
+
+[lua]
+symbol = " [](bright-white) "
+style = "bold white"
+
+[java]
+symbol = " "
