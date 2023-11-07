@@ -24,7 +24,7 @@ error_symbol = "[ ❯](red)(238)"
 
 [os]
 format = "on [$symbol$version]($style) "
-style = "bold blue"
+style = "bold 8"
 disabled = false
 
 [os.symbols]
@@ -32,7 +32,7 @@ Alpaquita = " "
 Alpine = " "
 Amazon = " "
 Android = " "
-Arch = " "
+Arch = "[ ](12 bold) "
 Artix = " "
 CentOS = " "
 Debian = " "
@@ -47,7 +47,7 @@ HardenedBSD = "󰞌 "
 Illumos = "󰈸 "
 Linux = " "
 Mabox = " "
-Macos = " "
+Macos = "[ ](bright-white bold) "
 Manjaro = " "
 Mariner = " "
 MidnightBSD = " "
@@ -59,37 +59,39 @@ openSUSE = " "
 OracleLinux = "󰌷 "
 Pop = " "
 Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
+Redhat = "[ ](196 bold) "
+RedHatEnterprise = "[ ](196 bold) "
 Redox = "󰀘 "
 Solus = "󰠳 "
 SUSE = " "
-Ubuntu = " "
+Ubuntu = "[ ](208 bold) "
 Unknown = " "
-Windows = " "
+Windows = "[ ](45 bold) "
 
 # Shell
 [shell]
 fish_indicator = '󰈺 '
-powershell_indicator = '_'
-zsh_indicator = '[󱉸_](bold 202)'
-bash_indicator = '󱆃'
+powershell_indicator = '[󰨊](33 bold)'
+zsh_indicator = '[󱉸 _](bold 202)'
+bash_indicator = ''
 unknown_indicator = 'mystery shell'
 # style = 'red bold'
+format = 'shell [$indicator]()'
 disabled = false
 
 # Shows the username
 [username]
-style_user = "white bold"
-style_root = "black bold"
-format = "[$user]($style) "
-disabled = true  # disable
-show_always = false
+style_user = 'bold 113'
+style_root = 'black bold'
+format = ' as [$user]($style) '
+disabled = false
+show_always = true
 
 [sudo]
-style = 'bold bright-purple'
-symbol = ' '
+style = 'bold 226'
+symbol = '  '
 disabled = false
+format = 'as [$symbol]($style)'
 
 [directory]
 truncation_length = 3
@@ -151,7 +153,7 @@ python_binary = "python3"
 
 [nodejs]
 format = "via [$symbol$version](bold green) "
-symbol = " [󰎙](28 bold) "
+symbol = "[󰎙](28 bold) "
 
 [ruby]
 format = "via [󰴭 $version]($style) "
